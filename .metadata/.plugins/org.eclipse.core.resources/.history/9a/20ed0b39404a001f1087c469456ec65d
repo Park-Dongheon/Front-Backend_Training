@@ -1,0 +1,26 @@
+package edu.pnu.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import edu.pnu.domain.Board;
+import edu.pnu.persistence.BoardRepository;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class SecurityUserDetailsService implements UserDetailsService{
+
+	private final BoardRepository boardRepo;
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		
+		Board board = boardRepo.findById(username);
+		return new AuthUser(board);
+	}
+	
+	
+}

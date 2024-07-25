@@ -1,0 +1,12 @@
+package edu.pnu;
+
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class DataSetup implements ApplicationRunner {
+
+}

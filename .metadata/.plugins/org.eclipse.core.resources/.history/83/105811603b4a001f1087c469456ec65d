@@ -1,0 +1,15 @@
+package edu.pnu.service;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class SecurityUserDetailsService implements UserDetailsService{
+
+	private final BoardRepositroy boardRepo;
+	
+	
+}

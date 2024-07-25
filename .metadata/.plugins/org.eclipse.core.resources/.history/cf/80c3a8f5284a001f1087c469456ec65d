@@ -1,0 +1,22 @@
+package edu.pnu.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+
+@Configuration
+public class SecurityConfig {
+
+	@Bean
+	SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
+		http.cors(cors -> cors
+				.configurationSource(corsSource()));
+	}
+	
+	private CorsConfigurationSource corsSource() {
+		CorsConfiguration config = new CorsConfiguration();
+		
+	}
+	
+}

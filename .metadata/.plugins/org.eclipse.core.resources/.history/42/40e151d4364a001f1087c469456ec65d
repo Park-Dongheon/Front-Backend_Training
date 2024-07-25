@@ -1,0 +1,15 @@
+package edu.pnu.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+import edu.pnu.persistence.BoardRepository;
+
+@Configuration
+@EnableWebSecurity
+public class SecurtyConfig {
+	private AuthenticationConfiguration authenticationConfiguration;
+	private BoardRepository boardRepo;
+
+}
